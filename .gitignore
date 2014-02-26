@@ -36,6 +36,7 @@
 !/lib/tpl/index.php
 /lib/plugins/*
 !/lib/plugins/acl
+!/lib/plugins/alohaintegration
 !/lib/plugins/authad
 !/lib/plugins/authldap
 !/lib/plugins/authmysql

@@ -1,0 +1,7 @@
+base   alohaintegration
+author Oliver Kopp
+email  kopp.dev@gmail.com
+date   2014-02-26
+name   alohaintegration plugin
+desc   Integrates the Aloha Editor into DokuWiki
+url    http://www.example.org/alohaintegration

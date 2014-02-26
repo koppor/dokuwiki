@@ -412,6 +412,27 @@ function tpl_metaheaders($alt = true) {
         'type'=> 'text/javascript', 'charset'=> 'utf-8', '_data'=> '',
         'src' => DOKU_BASE.'lib/exe/js.php'.'?tseed='.$tseed
     );
+	
+    // aloha integration; has to be loaded AFTER jQuery to avoid undefined module error
+    $head['link'][] = array(
+        'rel' => 'stylesheet', 'type'=> 'text/css',
+        'href'=> 'http://cdn.aloha-editor.org/latest/css/aloha.css'
+    );
+	$head['script'][] = array(
+		'type' => "text/javascript",
+		'src'  => "http://code.jquery.com/jquery-migrate-1.2.1.js"
+	);
+	$head['script'][] = array(
+		'type' => "text/javascript",
+		'src'  => "http://cdn.aloha-editor.org/latest/lib/require.js"
+	);
+	$head['script'][] = array(
+		'type' => "text/javascript",
+		'src'  => "http://cdn.aloha-editor.org/0.23.22/lib/aloha.js",
+		//'src'  => "http://cdn.aloha-editor.org/latest/lib/aloha.js",
+		//'data-aloha-plugins' => "common/ui,common/format,common/highlighteditables,common/link"
+		"data-aloha-plugins" => "common/ui, common/format, common/table, common/list, common/link, common/highlighteditables, common/block, common/undo, common/image, common/contenthandler, common/paste, common/characterpicker, common/commands, extra/flag-icons, common/abbr"
+	);
 
     // trigger event here
     trigger_event('TPL_METAHEADER_OUTPUT', $head, '_tpl_metaheaders_action', true);
